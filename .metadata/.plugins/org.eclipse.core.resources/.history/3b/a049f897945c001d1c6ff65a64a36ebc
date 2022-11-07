@@ -1,0 +1,31 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.fiap.baze.to.BicicletaTO;
+
+public class BicicletaDao {
+	
+	private Connection conexao;
+	
+	public BicicletaDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/**
+	 * Usando o result set para retornar o telefone do usuario
+	 * @param result
+	 * @throws SQLException
+	 */
+	private BicicletaTO parse(ResultSet result) throws SQLException {
+		int id = result.getInt("id_");
+		int celular = result.getInt("nr_telefone");
+		int ddd = result.getInt("nr_ddd");
+		int ddi = result.getInt("nr_ddi");
+		
+		return new BicicletaTO(id, celular, ddd, ddi);
+		
+	}
+}

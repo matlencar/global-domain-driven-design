@@ -1,0 +1,16 @@
+package br.com.fiap.baze.banco.factory;
+
+import java.sql.Connection;
+
+public class ConectionFactory {
+
+	private Connection conexao = null;
+		
+		public Connection getConnection() {
+			try {
+				
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+			}
+		}
+	
+}

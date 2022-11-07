@@ -1,0 +1,31 @@
+package br.com.fiap.base.to;
+
+public class EnderecoUsuarioTO {
+
+	private String rua;
+	private int numero;
+	private String bairro;
+	private int cep;
+	private String cidade;
+	private String estado;
+	private String pais;
+	private String complemento;
+	
+	//Construtor vazio
+	public EnderecoUsuarioTO() {}
+
+	//Construtor com parametros e argumentos
+	public EnderecoUsuarioTO(String rua, int numero, String bairro, int cep, String cidade, String estado, String pais,
+			String complemento) {
+		this.rua = rua;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.pais = pais;
+		this.complemento = complemento;
+	}
+	
+	
+}

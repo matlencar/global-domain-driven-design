@@ -1,0 +1,22 @@
+package br.com.fiap.base.to;
+
+public class CorridaTO {
+
+	//Variaveis
+	private int id;
+	private double corrida;
+	private double tempo;
+	
+	//Construtor vazio
+	public CorridaTO() {
+	}
+
+	//Construtor com parametros e variaveis
+	public CorridaTO(int id, double corrida, double tempo) {
+		this.id = id;
+		this.corrida = corrida;
+		this.tempo = tempo;
+	}
+	
+	
+}

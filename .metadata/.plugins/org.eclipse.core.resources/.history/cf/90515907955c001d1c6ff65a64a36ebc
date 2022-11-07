@@ -1,0 +1,35 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.fiap.baze.to.BicicletaTO;
+
+public class BicicletaDao {
+	
+	private Connection conexao;
+	
+	public BicicletaDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/**
+	 * Usando o result set para retornar a bicicleta do usuario
+	 * @param result
+	 * @throws SQLException
+	 */
+	private BicicletaTO parse(ResultSet result) throws SQLException {
+		int id = result.getInt("id_");
+		int aro = result.getInt("nr_aro");
+		double quadro = result.getDouble("nr_quadro");
+		double peso = result.getInt("nr_peso");
+		double altura = result.getDouble("nr_altura");
+		String cor = result.getString("nm_cor");
+		String tipo = result.getString("nm_tipo");
+		int marcha = result.getInt("nr_marcha");
+		
+		return new BicicletaTO(id , aro, quadro, peso, altura, cor, tipo, marcha);
+		
+	}
+}

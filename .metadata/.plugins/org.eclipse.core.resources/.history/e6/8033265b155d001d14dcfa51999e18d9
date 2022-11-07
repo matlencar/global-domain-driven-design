@@ -1,0 +1,17 @@
+package br.com.fiap.baze.bo;
+
+import java.sql.Connection;
+
+import br.com.fiap.baze.dao.EnderecoUsuarioDao;
+import br.com.fiap.baze.dao.TelefoneUsuarioDao;
+
+public class TelefoneUsuarioBO {
+	
+	private TelefoneUsuarioDao telefoneUsuarioDao;
+	private Connection conexao;
+	
+	public TelefoneUsuarioBO(Connection conexao) {
+		
+		this.telefoneUsuarioDao = new EnderecoUsuarioDao(conexao);
+	}
+}

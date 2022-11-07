@@ -1,0 +1,33 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fiap.baze.to.EnderecoUsuarioTO;
+
+public class EnderecoUsuarioDao {
+
+	private Connection conexao;
+
+	public EnderecoUsuarioDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/**
+	 * Cadastrar o endereco do usuario no banco
+	 * @throws SQLException 
+	 */
+	
+	public void cadastrarEndereco(EnderecoUsuarioTO endereco) throws SQLException {
+		PreparedStatement ps = conexao.prepareStatement("insert into t_baze_ender_usuario(id_usuario,id_ender_usuario"
+				+ "nm_logradouro, nr_logradouro, nm_bairro, nm_cidade, nm_pais, nr_cep, ds_complemento)" + "values(sq_t_baze_ender_usuario.nextval,?,?,?,?,?,?,?,?,?");
+		
+		ps.setInt(1, endereco.getId());
+		ps.setString(2, endereco.getRua());
+		ps.setInt(3, endereco.getNumero());
+		
+		)
+		
+	}
+}

@@ -1,0 +1,11 @@
+package br.com.fiap.baze.bo;
+
+/**Business Object do usuario
+ * Classe responsavel por implementar as regras de negocio
+ * @author Global Bolution Baze
+ *
+ */
+public class UsuarioBO {
+	
+	private UsuarioDao usuarioDao;
+}

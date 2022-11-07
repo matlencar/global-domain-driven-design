@@ -1,0 +1,24 @@
+package br.com.fiap.base.to;
+
+public class TelefoneUsuarioTO {
+
+	private int residencial;
+	private int celular;
+	private int ddd;
+	private int ddi;
+	
+	//Construtor vazio
+	public TelefoneUsuarioTO() {}
+	
+	//Contrutor com parametros e variaveis
+	public TelefoneUsuarioTO(int residencial, int celular, int ddd, int ddi) {
+		this.residencial = residencial;
+		this.celular = celular;
+		this.ddd = ddd;
+		this.ddi = ddi;
+	}
+	
+	
+	
+	
+}

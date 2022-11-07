@@ -1,0 +1,55 @@
+package br.com.fiap.baze.resource;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.UriInfo;
+
+import org.eclipse.jdt.core.compiler.InvalidInputException;
+
+import br.com.fiap.baze.banco.factory.ConectionFactory;
+import br.com.fiap.baze.bo.UsuarioBO;
+import br.com.fiap.baze.to.UsuarioTO;
+
+@Path("/usuario")
+public class UsuarioResource {
+	
+	private UsuarioBO usuarioBo;
+	
+	
+	public UsuarioResource () {
+		
+		try {
+			
+			usuarioBo = new UsuarioBO(ConectionFactory.getConnetion());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response cadastrar(UsuarioTO usuarioTo, @Context UriInfo uriInfo) throws Exception {
+		
+		try {
+			usuarioBo.cadastrarUsuario(usuarioTo);
+		} catch (Exception e) {
+			return Response.status(400, e.getMessage()).build();
+		}
+		
+		UriBuilder builder = uriInfo.getAbsolutePathBuilder();
+		
+		builder.path(Integer.toString(usuarioTo.getId()));
+		
+		return Response.created(builder.build()).build();
+	}
+}

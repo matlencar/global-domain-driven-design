@@ -1,0 +1,95 @@
+package br.com.fiap.base.to;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioTO {
+
+	private int id;
+	private String nome;
+	private int idade;
+	private long cpf;
+	private int tg;
+	private String email;
+	private TelefoneUsuarioTO telefoneUsuario;
+	private EnderecoUsuarioTO enderecoUsuario;
+	
+	
+	//Criando uma lista de telefones de usuarios
+	private List<TelefoneUsuarioTO> telUsuarios = new ArrayList<>();
+	
+	private List<EnderecoUsuarioTO> enderecoUsuarios = new ArrayList<>();
+	
+	//Contrutor vazio
+	public UsuarioTO() {}
+
+	//Construtores com parametros e variaveis
+	public UsuarioTO(int id, String nome, int idade, long cpf, int tg, String email) {
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+		this.cpf = cpf;
+		this.tg = tg;
+		this.email = email;
+	}
+
+	//Getters and Setters
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public long getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(long cpf) {
+		this.cpf = cpf;
+	}
+
+	public int getTg() {
+		return tg;
+	}
+
+	public void setTg(int tg) {
+		this.tg = tg;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<TelefoneUsuarioTO> getTelUsuarios() {
+		return telUsuarios;
+	}
+
+	public void setTelUsuario(List<TelefoneUsuarioTO> telUsuarios) {
+		this.telUsuarios = telUsuarios;
+	}
+	
+	
+}

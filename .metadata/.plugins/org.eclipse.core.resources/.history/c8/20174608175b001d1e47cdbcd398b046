@@ -1,0 +1,20 @@
+package br.com.fiap.base.to;
+
+public class BicicletaEletricaTO extends BicicletaTO {
+
+	
+	private double amperesBateria;
+	private double motor;
+	private BicicletaTO bicicleta;
+	
+	//Construtor com parametros e variaveis
+	public BicicletaEletricaTO(int id, int aro, double quadro, double peso, double altura, String cor, String tipo,
+			int marcha, double amperesBateria, double motor, BicicletaTO bicicleta) {
+		super(id, aro, quadro, peso, altura, cor, tipo, marcha);
+		this.amperesBateria = amperesBateria;
+		this.motor = motor;
+		this.bicicleta = bicicleta;
+	}
+	
+	
+}

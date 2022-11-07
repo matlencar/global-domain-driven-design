@@ -1,0 +1,20 @@
+package br.com.fiap.baze.resource;
+
+import br.com.fiap.baze.banco.factory.ConectionFactory;
+import br.com.fiap.baze.bo.UsuarioBO;
+
+@Path("/usuario")
+public class UsuarioResource {
+	
+	private UsuarioBO usuarioBo;
+	
+	public UsuarioResource () {
+		
+		try {
+			
+			usuarioBo = new UsuarioBO(ConectionFactory.getConnetion());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

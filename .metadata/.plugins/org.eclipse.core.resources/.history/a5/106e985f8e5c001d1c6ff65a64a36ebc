@@ -1,0 +1,43 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+public class TelefoneUsuarioDao {
+	
+	private Connection conexao;
+
+	public TelefoneUsuarioDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/**
+	 * Usando o result set para retornar o endereco do usuario
+	 * @param result
+	 * @throws SQLException
+	 */
+	private TelefoneUsuarioTO parse(ResultSet result) throws SQLException {
+		int id = result.getInt("id_");
+		int residencial = result.getInt("nr_logradouro");
+		String bairro = result.getString("nm_bairro");
+		int cep = result.getInt("nr_cep");
+		String cidade = result.getString("nm_cidade");
+		String estado = result.getString("nm_estado");
+		String pais = result.getString("nm_pais");
+		String complemento = result.getString("ds_complemento");
+		
+		return new TelefoneUsuarioTO();
+		
+	}
+	
+	/**private int id;
+	private int residencial;
+	private int celular;
+	private int ddd;
+	private int ddi;
+	 * 
+	 */
+}

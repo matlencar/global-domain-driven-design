@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\mathe\OneDrive\Área de Trabalho\global domain driven design\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2881609949.index

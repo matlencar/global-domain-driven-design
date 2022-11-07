@@ -1,0 +1,29 @@
+package br.com.fiap.base.to;
+
+public class BicicletaTO {
+	
+	 private int id;
+	 private int aro;
+	 private double quadro;
+	 private double peso;
+	 private double altura;
+	 private String cor;
+	 private String tipo;
+	 private int marcha;
+	
+	 //Construtor vazio
+	 public BicicletaTO() {}
+
+	 //Construtor com parametros e variaveis
+	public BicicletaTO(int id, int aro, double quadro, double peso, double altura, String cor, String tipo,
+			int marcha) {
+		this.id = id;
+		this.aro = aro;
+		this.quadro = quadro;
+		this.peso = peso;
+		this.altura = altura;
+		this.cor = cor;
+		this.tipo = tipo;
+		this.marcha = marcha;
+	}
+}

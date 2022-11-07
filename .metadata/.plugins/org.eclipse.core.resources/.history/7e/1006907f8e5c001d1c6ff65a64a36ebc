@@ -1,0 +1,41 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.fiap.baze.to.TelefoneUsuarioTO;
+
+
+
+public class TelefoneUsuarioDao {
+	
+	private Connection conexao;
+
+	public TelefoneUsuarioDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	/**
+	 * Usando o result set para retornar o telefone do usuario
+	 * @param result
+	 * @throws SQLException
+	 */
+	private TelefoneUsuarioTO parse(ResultSet result) throws SQLException {
+		int id = result.getInt("id_");
+		int celular = result.getInt("nr_telefone");
+		int ddd = result.getInt("nr_ddd");
+		int ddi = result.getInt("nr_ddi");
+		
+		return new TelefoneUsuarioTO(id, celular, ddd,ddi);
+		
+	}
+	
+	/**private int id;
+	private int residencial;
+	private int celular;
+	private int ddd;
+	private int ddi;
+	 * 
+	 */
+}

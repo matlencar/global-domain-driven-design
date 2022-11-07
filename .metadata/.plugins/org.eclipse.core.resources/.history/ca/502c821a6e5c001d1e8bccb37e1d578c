@@ -1,0 +1,10 @@
+package br.com.fiap.baze.dao;
+
+import java.sql.Connection;
+
+public class EnderecoUsuarioDao {
+	
+	private Connection conexao;
+	
+	public EnderecoUsuarioDao(Connection conexao) {
+		this.conexao = conexao;
